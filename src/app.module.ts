@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [    
+  imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -13,9 +13,10 @@ import { UsersModule } from './users/users.module';
       username: 'root',
       password: 'sasuke486',
       database: 'agroservicios',
-      entities: [],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'], // toma todas los archivos con extension .entity.ts y .entity.js
       synchronize: true,
-    }), UsersModule,
+    }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
