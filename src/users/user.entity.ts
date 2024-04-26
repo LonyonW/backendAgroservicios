@@ -14,7 +14,7 @@ export class User {
   @Column({ unique: true })
   email_user: string;
 
-  @Column()
+  @Column({ nullable: true })
   phone_user: string;
 
   @Column({ nullable: true })
@@ -23,9 +23,9 @@ export class User {
   @Column()
   password_user: string;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  created_at: string;
+  //@Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  //created_at: string;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  updated_at: string;
+  //@Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  //updated_at: string;
 }
