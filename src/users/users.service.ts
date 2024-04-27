@@ -12,6 +12,6 @@ export class UsersService {
 
   create(user: CreateUserDto) {
     const newUser = this.usersRepository.create(user);
-    return this.usersRepository.save(newUser); // guarda usuario en la db
+    return this.usersRepository.save(newUser); // guarda usuario en la base de datos
   }
 }
